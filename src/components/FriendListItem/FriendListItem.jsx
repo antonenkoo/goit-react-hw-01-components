@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './friendsList.module.scss';
 import PropTypes from 'prop-types';
+import friends from './friends.json';
 
-const FriendListItem = ({ friends }) => {
-  // eslint-disable-next-line no-lone-blocks
-  {
-    friends.map(friend => {
+class FriendListItem extends Component {
+  render() {
+    return friends.map(friend => {
+      console.log(friend);
       return (
         <li className={styles.friendsList_item} key={friend.id}>
           <span
@@ -24,7 +25,7 @@ const FriendListItem = ({ friends }) => {
       );
     });
   }
-};
+}
 
 FriendListItem.propTypes = {
   friends: PropTypes.array,
